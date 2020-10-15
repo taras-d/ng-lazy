@@ -1,9 +1,14 @@
 # ng-lazy
 
-Example of lazy loading Angular (v10) components in declarative way. Similar to [React.lazy](https://reactjs.org/docs/code-splitting.html#reactlazy).
+Example of lazy loading Angular (v10) components in declarative way (inside template). Similar to [React.lazy](https://reactjs.org/docs/code-splitting.html#reactlazy).
 
+```html
+<lazy-load module="ModuleName" component="ComponentName"></lazy-load>
+```
 
-### 1. Create module and component in lazy-modules folder
+---
+
+#### 1. Create module and component in lazy-modules folder
 
 ```ts
 /* Component - src/app/lazy-modules/user/user-profile.component.ts */
@@ -39,7 +44,7 @@ export class UserModule {
 }
 ```
 
-### 2. Add module to lazy-modules-map.ts file
+#### 2. Add module to lazy-modules-map.ts file
 ```ts
 /* src/app/lazy-modules/lazy-modules-map.ts */
 
@@ -48,11 +53,13 @@ export const lazyModulesMap = {
 };
 ```
 
-### 3. Lazy load component in template
+#### 3. Lazy load component in template
 ```html
 <!-- src/app/app.component.html -->
 
 <lazy-load module="UserModule" component="UserProfileComponent" [inputs]="{ userId: '1' }"></lazy-load>
-
-<lazy-load module="UserModule" component="UserProfileComponent" [inputs]="{ userId: '2' }"></lazy-load>
 ```
+
+---
+
+#### For technical details see [lazy-load.component.ts](./src/app/lazy-load/lazy-load.component.ts)
