@@ -59,9 +59,10 @@ export class LazyLoadComponent implements OnInit, OnDestroy {
         throw new Error(`'${this.module}' is not exported from module file`);
       }
 
-      // compile module (get module factory)
+      // compile module (create module factory)
       return this.compiler.compileModuleAsync(moduleClass);
     }).then((moduleFactory: NgModuleFactory<any>) => {
+
       // create module
       console.log(`Create ${this.module}`);
       return moduleFactory.create(this.injector);
