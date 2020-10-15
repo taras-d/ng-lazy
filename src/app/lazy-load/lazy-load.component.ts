@@ -11,7 +11,7 @@ const modulesCache = new Map();
 @Component({
   selector: 'lazy-load',
   template: '',
-  styles: [':host{ display: none; }']
+  styles: [':host { display: none; }']
 })
 export class LazyLoadComponent implements OnInit, OnDestroy {
   @Input() module: string;
