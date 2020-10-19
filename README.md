@@ -59,4 +59,4 @@ export const lazyModulesMap = {
 
 ---
 
-#### For technical details see [lazy-load.component.ts](./src/app/lazy-load/lazy-load.directive.ts)
+#### For technical details see [lazy-load.component.ts](./src/app/shared/lazy-load/lazy-load.directive.ts)
