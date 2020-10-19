@@ -1,5 +1,5 @@
 import {
-  Component, Input, OnInit, OnDestroy, Compiler, NgModuleFactory, Injector,
+  Directive, Input, OnInit, OnDestroy, Compiler, NgModuleFactory, Injector,
   ViewContainerRef, NgModuleRef, ComponentRef
 } from '@angular/core';
 
@@ -8,12 +8,8 @@ import { lazyModulesMap } from '../../lazy-modules-map';
 // cache for loaded modules
 const modulesCache = new Map();
 
-@Component({
-  selector: 'lazy-load',
-  template: '',
-  styles: [':host { display: none; }']
-})
-export class LazyLoadComponent implements OnInit, OnDestroy {
+@Directive({ selector: 'lazy-load' })
+export class LazyLoadDirective implements OnInit, OnDestroy {
   @Input() module: string;
   @Input() component: string;
   @Input() inputs: {[key: string]: any} = {};

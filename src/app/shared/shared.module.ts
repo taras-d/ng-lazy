@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LazyLoadComponent } from './lazy-load/lazy-load.component';
+import { LazyLoadDirective } from './lazy-load/lazy-load.directive';
 
 @NgModule({
   declarations: [
-    LazyLoadComponent
+    LazyLoadDirective
   ],
   exports: [
-    LazyLoadComponent
+    LazyLoadDirective
   ],
   imports: [
     CommonModule
