@@ -3,7 +3,7 @@ import {
   ViewContainerRef, NgModuleRef, ComponentRef
 } from '@angular/core';
 
-import { lazyModulesMap } from '../lazy-modules/lazy-modules-map';
+import { lazyModulesMap } from '../../lazy-modules-map';
 
 // cache for loaded modules
 const modulesCache = new Map();
