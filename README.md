@@ -29,15 +29,12 @@ export class UserProfileComponent {
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UserProfileComponent } from './user-profile.component'
+import { SharedModule } from '../../shared/shared.module';
+import { UserProfileComponent } from './user-profile.component';
 
 @NgModule({
-  declarations: [
-    UserProfileComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+  declarations: [ UserProfileComponent ],
+  imports: [ CommonModule, SharedModule ]
 })
 export class UserModule {
   entry = { UserProfileComponent };
@@ -46,10 +43,10 @@ export class UserModule {
 
 #### 2. Add module to lazy-modules-map.ts file
 ```ts
-/* src/app/lazy-modules/lazy-modules-map.ts */
+/* src/app/lazy-modules-map.ts */
 
 export const lazyModulesMap = {
-  UserModule: () => import('./user/user.module')
+  UserModule: () => import('./lazy-modules/user/user.module')
 };
 ```
 
